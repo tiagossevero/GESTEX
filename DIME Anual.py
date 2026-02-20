@@ -473,6 +473,12 @@ with tab1:
         </div>
         """, unsafe_allow_html=True)
 
+        st.info(
+            "Análise consolidada por CNPJ Raiz — considera todos os estabelecimentos "
+            "SC do grupo econômico, inclusive o consolidador de apuração, "
+            "não apenas o estabelecimento GESTEX cadastrado."
+        )
+
         # Carregar dados anuais
         df_anual = carregar_dime_anual(cnpj_raiz)
 
@@ -496,7 +502,7 @@ with tab1:
             with c4:
                 st.markdown(f'<div class="metric-card purple"><div class="metric-label">Crédito DCIP</div><div class="metric-value">{fmt(dcip_total)}</div></div>', unsafe_allow_html=True)
             with c5:
-                st.markdown(f'<div class="metric-card"><div class="metric-label">Estabelecimentos</div><div class="metric-value">{int(estab_max)}</div></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="metric-card"><div class="metric-label">Estabelecimentos SC (Grupo)</div><div class="metric-value">{int(estab_max)}</div></div>', unsafe_allow_html=True)
 
             # Gráfico evolução anual
             st.markdown('<div class="section-header"><h2>📈 Evolução Anual</h2></div>', unsafe_allow_html=True)
